@@ -78,10 +78,11 @@ If you use this code or methodology, please cite appropriately and credit the or
 ## Contact
 
 For questions, suggestions, or contributions, please contact:  
-Allison Ramirez
-University Of Baltimore
+
+Allison Ramirez //
+University Of Baltimore //
 Allison.Ramirez@ubalt.edu 
 
-Erika Black 
-University Of Baltimore
+Erika Black //
+University Of Baltimore //
 Erika.Black@ubalt.edu
