@@ -1,0 +1,88 @@
+# Smart Phishing URL Detector  
+Combining Pattern Analysis, Threat Intelligence, and Domain Profiling for Smarter Phishing Detection
+
+## Project Overview
+
+This project leverages Machine Learning (ML) to detect phishing URLs using two primary data sources:
+1. Structural patterns in the URL itself (e.g., length, presence of keywords, special characters)
+2. WHOIS domain profiling (e.g., domain age)
+
+The system provides real-time classification of URLs as malicious or benign, along with a risk score and clear explanation for each prediction. It is designed to be lightweight, explainable, and reproducible, making it suitable for both research and practical deployment.
+
+## Features
+
+- Phishing detection using lexical features and domain metadata
+- Integration of WHOIS-based domain age analysis
+- Real-time `check_url()` prediction function
+- Risk score and interpretability (human-readable reasoning)
+- Fully implemented in Google Colab with open-source datasets
+
+## Technologies Used
+
+- Python 3.11
+- scikit-learn
+- pandas
+- joblib
+- Google Colab
+
+## Dataset Sources
+
+- Malicious URLs Dataset: https://www.kaggle.com/datasets/sid321axn/malicious-urls-dataset  
+- WHOIS Domain Dataset (100K subset): https://www.kaggle.com/datasets/williamgill/7-million-domains-with-alexa-rank-and-whois
+
+## Project Structure
+├── phishing_detection.ipynb          
+├── malicious_phish.csv               
+├── whois_data_real_100k.csv          
+├── phishing_model.pkl               
+└── README.md                        
+
+
+## Example Output
+🔎 URL: https://mail.google.com/mail/u/0/
+🛡️ Result: BENIGN ✅
+📊 Risk Score: 100.0%
+📌 Reason: no suspicious pattern
+🌍 Domain Age: 9624 days
+
+
+🔎 URL: http://192.168.1.1/login
+🛡️ Result: MALICIOUS ❌
+📊 Risk Score: 99.0%
+📌 Reason: uses IP address; not using HTTPS; contains phishing-related words
+🌍 Domain Age: 3214 days
+
+
+## Model Performance
+
+The model was evaluated on a test set using a Random Forest classifier:
+
+- Accuracy: 82%
+- Precision: 81%
+- Recall: 78%
+- F1-score: 81%
+
+These values reflect results from a real-world dataset of approximately 130,000 samples after an 80/20 training/testing split.
+
+## How to Use
+
+1. Open the `Smart_Phishing_Detector.ipynb` file in Google Colab
+2. Upload the required datasets (`malicious_phish.csv`, `whois_data_real_100k.csv`)
+3. Run all code cells from top to bottom (Steps 1 to 8)
+4. Use the function `check_url("your-url-here")` to test any link
+
+## Contribution and Citation
+
+This project was developed as part of a graduate-level cybersecurity research course.  
+If you use this code or methodology, please cite appropriately and credit the original authors.
+
+## Contact
+
+For questions, suggestions, or contributions, please contact:  
+Allison Ramirez
+University Of Baltimore
+Allison.Ramirez@ubalt.edu 
+
+Erika Black 
+University Of Baltimore
+Erika.Black@ubalt.edu
